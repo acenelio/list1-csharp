@@ -19,7 +19,13 @@ namespace Course {
                 string name = Console.ReadLine();
                 Console.Write("Salary: ");
                 double salary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                list.Add(new Employee(id, name, salary));
+                if (check == null) {
+                    list.Add(new Employee(id, name, salary));
+                }
+                else {
+                    i--;
+                    Console.WriteLine("This ID is already being used!");
+                }
                 Console.WriteLine();
             }
 
